@@ -1,15 +1,12 @@
 body {
     background-color: #FFEEDB;
     color: #4c5b61;
+    margin: 0;
+    padding: 0;
 }
 
 #navbar {
     background-color: #61C9A8;
-}
-
-#main-title {
-    background-color: peachpuff;
-    padding: 2rem;
 }
 
 .card {
@@ -27,12 +24,53 @@ body {
 }
 
 #company-values {
-
     background-color: peachpuff;
-
 }
 
 #footer {
     background-color: #08605f;
     color: white;
+    clear: both; /* Ensures footer stays below floating elements */
+    padding: 20px 0;
+}
+
+span {
+    color: #61C9A8;
+}
+
+/* Content Wrapper for Flexbox Layout */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px; /* Reduce vertical padding */
+    position: relative;
+    margin: 0; /* Remove top and bottom margin */
+    min-height: calc(100vh - 120px); /* Ensure content-wrapper takes at least full viewport height minus navbar and footer height */
+}
+
+/* Text content styling */
+.text-content {
+    flex: 1;
+    padding: 20px;
+    max-width: 50%;
+    overflow-y: auto; /* Allows scrolling within the text area if content exceeds the container height */
+}
+
+/* Fixed image styling */
+.fixed-image {
+    position: sticky;
+    top: 70px; /* Adjust to match the height of the navbar */
+    right: 0;
+    width: 45%; /* Adjust width as needed */
+    display: flex;
+    align-items: flex-start; /* Align the image to the top to reduce space */
+    justify-content: center;
+    margin-right: 0; /* Remove right margin to align with text */
+}
+
+.fixed-image img {
+    max-width: 100%;
+    max-height: calc(100vh - 150px); /* Ensure the image does not exceed the viewport height minus some space for padding */
+    object-fit: cover;
+    margin-bottom: 0; /* Remove any bottom margin from the image */
 }
