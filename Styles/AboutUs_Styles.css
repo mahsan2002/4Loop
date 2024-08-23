@@ -26,6 +26,12 @@ body {
     font-weight: bold;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    
+}
+
 #company-values {
 
     background-color: peachpuff;
@@ -36,4 +42,10 @@ body {
     background-color: #08605f;
     color: white;
 }
+
+#twitter-logo {
+    width: 67px;
+}
+
+
 
