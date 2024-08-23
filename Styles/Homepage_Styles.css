@@ -3,6 +3,9 @@ body {
     color: #4c5b61;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 #navbar {
@@ -30,8 +33,9 @@ body {
 #footer {
     background-color: #08605f;
     color: white;
-    clear: both; /* Ensures footer stays below floating elements */
     padding: 20px 0;
+    margin-top: auto; /* Pushes footer to the bottom */
+    width: 100%;
 }
 
 span {
@@ -42,10 +46,10 @@ span {
 .content-wrapper {
     display: flex;
     justify-content: space-between;
+    flex-grow: 1; /* Allows the content to expand and fill the space */
     padding: 0 20px; /* Reduce vertical padding */
     position: relative;
     margin: 0; /* Remove top and bottom margin */
-    min-height: calc(100vh - 120px); /* Ensure content-wrapper takes at least full viewport height minus navbar and footer height */
 }
 
 /* Text content styling */
@@ -54,6 +58,7 @@ span {
     padding: 20px;
     max-width: 50%;
     overflow-y: auto; /* Allows scrolling within the text area if content exceeds the container height */
+    margin-bottom: 0; /* Remove bottom margin */
 }
 
 /* Fixed image styling */
@@ -66,11 +71,11 @@ span {
     align-items: flex-start; /* Align the image to the top to reduce space */
     justify-content: center;
     margin-right: 0; /* Remove right margin to align with text */
+    margin-bottom: 0; /* Remove bottom margin */
 }
 
 .fixed-image img {
     max-width: 100%;
     max-height: calc(100vh - 150px); /* Ensure the image does not exceed the viewport height minus some space for padding */
     object-fit: cover;
-    margin-bottom: 0; /* Remove any bottom margin from the image */
 }
