@@ -7,7 +7,10 @@ while name == "":
 
 print(f"Hello {name}")
 
+# Hi Noor
+
 import re
+
 
 def is_strong_password(password):
     """Check if the password is strong."""
