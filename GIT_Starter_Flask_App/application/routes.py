@@ -26,4 +26,4 @@ def about_us():
 @app.route('/login')
 def login():
     # code goes here
-    return render_template('login.html')
+    return render_template('login.html', title='Login Page')
