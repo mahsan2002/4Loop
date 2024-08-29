@@ -22,3 +22,8 @@ def contact_us():
 def about_us():
     # code goes here
     return render_template('AboutUs.html')
+
+@app.route('/login')
+def login():
+    # code goes here
+    return render_template('login.html')

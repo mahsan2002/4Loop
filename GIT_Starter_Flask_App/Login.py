@@ -7,7 +7,6 @@ while name == "":
 
 print(f"Hello {name}")
 
-# Hi Noor
 
 import re
 
