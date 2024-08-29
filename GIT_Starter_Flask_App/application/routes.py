@@ -4,10 +4,9 @@ from application import app
 
 
 @app.route('/')
-@app.route('/home')
+# @app.route('/home')
 def home():
     return render_template('home.html', title='Home')
-
 
 @app.route('/welcome/<name>')
 def welcome(name):
@@ -18,3 +17,8 @@ def welcome(name):
 def contact_us():
     # code goes here
     return render_template('contact.html', location='Osterley', title='Contact Us')
+
+@app.route('/aboutus')
+def about_us():
+    # code goes here
+    return render_template('AboutUs.html')
