@@ -20,6 +20,12 @@ body {
     background-color:peachpuff;
 }
 
+.sub-title {
+    background-color:peachpuff;
+
+}
+
+
 .card {
     margin: 2rem;
 }
@@ -29,4 +35,9 @@ body {
 #footer {
     background-color: #08605f;
     color: white;
+}
+
+.col-md footer-text a {
+  color: blue;
+  text-decoration: none; /* no underline */
 }
