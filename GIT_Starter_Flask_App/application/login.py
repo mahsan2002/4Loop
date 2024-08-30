@@ -1,11 +1,11 @@
-name = input("Username:")
-
-while name == "":
-    print("You did not enter your username")
-    name = input("Username:")
-
-
-print(f"Hello {name}")
+# name = input("Username:")
+#
+# while name == "":
+#     print("You did not enter your username")
+#     name = input("Username:")
+#
+#
+# print(f"Hello {name}")
 
 
 import re

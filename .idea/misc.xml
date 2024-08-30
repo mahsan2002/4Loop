@@ -3,7 +3,11 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.9 (.venv)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (.venv)" project-jdk-type="Python SDK" />
+<<<<<<< HEAD
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (GIT_Starter_Flask_App)" project-jdk-type="Python SDK" />
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9" project-jdk-type="Python SDK" />
+>>>>>>> a6722a189a3969aed01bd6f5eb1d4311908e32d5
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
   </component>

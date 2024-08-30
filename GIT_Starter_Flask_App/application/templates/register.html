@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<section>
+   <form action="" method="POST">
+      <p><label for="username">Username: </label></p>
+      <p><input type="text" id="username" name="username"/></p>
+       <p><input type="password" id="password" name="password"/></p>
+      <p><input type=submit value='Register' /></p>
+   </form>
+   <p>{{message}}</p>
+</section>
+{% endblock %}
