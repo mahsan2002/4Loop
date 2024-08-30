@@ -29,6 +29,6 @@ def login():
     return render_template('login.html', title='Login Page')
 
 @app.route('/leaderboard')
-def login():
+def leaderboard():
     # code goes here
     return render_template('leaderboard.html', title='Leaderboard')
