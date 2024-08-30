@@ -38,7 +38,7 @@ CREATE TABLE `db_users` (
 
 LOCK TABLES `db_users` WRITE;
 /*!40000 ALTER TABLE `db_users` DISABLE KEYS */;
-INSERT INTO `db_users` VALUES (1,'Noor_0','Analysis2024!'),(2,'Isaiah_1','Agile2024!'),(3,'Muhammed_2','Pyth0n2025!'),(4,'Anand_3','Jinja2025!');
+INSERT INTO `db_users` VALUES (1,'Noor','Analysis2024!'),(2,'Isaiah','Agile2024!'),(3,'Muhammed','Pyth0n2025!'),(4,'Anand','Jinja2025!');
 /*!40000 ALTER TABLE `db_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
