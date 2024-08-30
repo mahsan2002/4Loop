@@ -31,4 +31,4 @@ def login():
 @app.route('/leaderboard')
 def leaderboard():
     # code goes here
-    return render_template('leaderboard.html', title='Leaderboard')
+    return render_template('Leaderboard.html', title='Leaderboard')
