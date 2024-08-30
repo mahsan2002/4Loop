@@ -4,9 +4,10 @@ from application import app
 
 
 @app.route('/')
+@app.route('/home')
 # @app.route('/home')
 def home():
-    return render_template('home.html', title='Home')
+    return render_template('HomePage.html', title='Home')
 
 @app.route('/welcome/<name>')
 def welcome(name):
@@ -32,3 +33,8 @@ def login():
 def leaderboard():
     # code goes here
     return render_template('Leaderboard.html', title='Leaderboard')
+
+@app.route('/tracker')
+def tracker():
+    # code goes here
+    return render_template('tracker.html', title='Tracker')
