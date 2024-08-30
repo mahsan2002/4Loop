@@ -6,7 +6,7 @@ from application import app
 @app.route('/')
 # @app.route('/home')
 def home():
-    return render_template('home.html', title='Home')
+    return render_template('HomePage.html', title='Home')
 
 @app.route('/welcome/<name>')
 def welcome(name):
