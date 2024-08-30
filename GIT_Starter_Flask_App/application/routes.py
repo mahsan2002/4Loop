@@ -22,7 +22,7 @@ def contact_us():
 @app.route('/aboutus')
 def about_us():
     # code goes here
-    return render_template('AboutUs.html')
+    return render_template('AboutUs.html', title='About us')
 
 @app.route('/login')
 def login():

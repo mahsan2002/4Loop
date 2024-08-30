@@ -16,6 +16,10 @@ body {
     margin: 0 5px;
 }
 
+#main-title {
+    background-color:peachpuff;
+}
+
 .card {
     margin: 2rem;
 }
