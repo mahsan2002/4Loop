@@ -27,3 +27,8 @@ def about_us():
 def login():
     # code goes here
     return render_template('login.html', title='Login Page')
+
+@app.route('/leaderboard')
+def leaderboard():
+    # code goes here
+    return render_template('Leaderboard.html', title='Leaderboard')
