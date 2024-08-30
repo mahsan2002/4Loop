@@ -15,3 +15,5 @@ users = mycursor.fetchall()
 
 for user in users:
     print(user)
+    print('Username: ' + user[1])
+    print('Password: ' + user[2])
