@@ -44,8 +44,12 @@ def login():
 
             if username == user['username']:
                 return render_template('HomePage.html', title="Home")
+
             else:
-                return render_template('login.html', title="Login")
+                print('no match')
+
+
+    return render_template('login.html', title="Login")
 
 
 @app.route('/leaderboard')
