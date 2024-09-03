@@ -10,6 +10,7 @@
 
 import re
 
+
 def is_strong_password(password):
     """Check if the password is strong."""
     # Minimum 8 characters
@@ -33,6 +34,16 @@ def is_strong_password(password):
         return False, "Password must contain at least one special character."
 
     return True, "Password is strong."
+
+
+def is_strong_username(username):
+    """Check if the password is strong."""
+
+    # At least one digit
+    if not re.search(r"\d", username):
+        return False, "Username must contain at least one digit."
+
+    return True, "Username is strong."
 
 
 def get_username_and_password():
