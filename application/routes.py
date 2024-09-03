@@ -35,19 +35,20 @@ def about_us():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 
+
     if request.method == 'POST':
         username = request.form['username']
+        password = request.form['password']
 
         logged_in_users = get_users()
 
         for user in logged_in_users:
 
-            if username == user['username']:
+            if username == user['username'] and password == user['password']:
                 return render_template('HomePage.html', title="Home")
 
             else:
                 print('no match')
-
 
     return render_template('login.html', title="Login")
 
