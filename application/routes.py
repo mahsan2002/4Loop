@@ -4,8 +4,9 @@ from flask import render_template, request, redirect, url_for, session
 
 from application import app
 from application.my_connector import get_users, add_user
-from application.login import is_strong_password
+from application.login import is_strong_password, is_strong_username
 import bcrypt
+
 
 @app.route('/')
 @app.route('/home')
@@ -35,10 +36,11 @@ def about_us():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 
-
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+
+        username_strong = is_strong_username(password)
 
         logged_in_users = get_users()
 
@@ -81,12 +83,12 @@ def register():
         password = request.form['password']
 
         password_strong = is_strong_password(password)
+        username_strong = is_strong_username(username)
 
-        if password_strong[0] == False:
+        if password_strong[0] == False and username_strong[0] == False:
             error = password_strong[1]
 
         else:
-
             # converting password to array of bytes
             bytes = password.encode('utf-8')
             salt = bcrypt.gensalt()
@@ -99,7 +101,5 @@ def register():
 
             print(shortened_hash)
 
-            return redirect(url_for('login'))
 
     return render_template('register.html', title='Register', message=error)
-
