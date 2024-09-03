@@ -10,7 +10,6 @@
 
 import re
 
-
 def is_strong_password(password):
     """Check if the password is strong."""
     # Minimum 8 characters
@@ -35,6 +34,7 @@ def is_strong_password(password):
 
     return True, "Password is strong."
 
+
 def get_username_and_password():
     """Prompt user for username and password."""
     username = input("Enter your username: ")
@@ -48,5 +48,7 @@ def get_username_and_password():
     else:
         print(f"Password is not strong enough: {feedback}")
 
+
 if __name__ == "__main__":
     get_username_and_password()
+

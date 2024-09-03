@@ -1,40 +1,11 @@
 {% extends "layout.html" %}
 
 {% block body_content %}
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col text-center"></div>
-
-                <div class="card col" style="width: 18rem;">
-                    <div class="card-body ">
-
-                        <h5 class="card-title text-center">Sign in to SkySustain</h5>
-                        <hr>
-
-                            <form action="" method="POST">
-                                <label for="username" class="form-label">Username</label>
-
-                                <div class="input-group mb-3"><span class="input-group-text" id="username"></span>
-                                    <input  type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="username">
-                                </div>
-
-                                <label for="password" class="form-label">Password</label>
-
-                                <div class="input-group mb-3"><span class="input-group-text" id="password"></span>
-                                    <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="password">
-                                </div>
-
-                            </form>
-
-                        <div>
-                            <button type="button" class="btn btn-outline-primary text-center">Login</button>
-                        </div>
-                    </div>
-                </div>
-            <div class="col text-center"></div>
-        </div>
-    </div>
-
+    <section>
+       <form action="" method="POST">
+          <p><label for="username">Username: </label></p>
+          <p><input type="text" id="username" name="username"/></p>
+          <p><input type=submit value='Login' /></p>
+       </form>
+    </section>
 {% endblock %}

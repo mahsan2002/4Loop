@@ -29,8 +29,11 @@ def get_db_connection():
 
     return mydb
 
+
 def get_users():
     conn = get_db_connection()
+
+    # cursor() allows you to interact with the sql database.
     cursor = conn.cursor()
 
     sql = "Select ID, username from db_users"
@@ -42,6 +45,7 @@ def get_users():
         user_list.append({'ID': user[0], 'username': user[1]})
     return user_list
 
+
 def add_user(username, password):
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -51,3 +55,4 @@ def add_user(username, password):
     cursor.execute(sql, val)
 
     conn.commit()
+
