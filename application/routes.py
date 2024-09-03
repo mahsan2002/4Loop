@@ -43,12 +43,9 @@ def login():
         for user in logged_in_users:
 
             if username == user['username']:
-                print('Its a match')
                 return render_template('HomePage.html', title="Home")
             else:
-                print('No match')
-
-    return render_template('login.html', title="Login")
+                return render_template('login.html', title="Login")
 
 
 @app.route('/leaderboard')
