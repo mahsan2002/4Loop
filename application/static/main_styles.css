@@ -1,6 +1,226 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700&display=swap');
 
 body {
+    font-family: Arial, sans-serif; /* Sets the font for the entire page */
+    background-color: #e0f7fa; /* Light blue background color */
+    color: #00796b; /* Dark teal text color */
+    text-align: center; /* Center-aligns text */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Uses flexbox layout */
+    flex-direction: column; /* Stacks child elements vertically */
+    min-height: 100vh; /* Ensures the body takes at least full viewport height */
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif; /* Sets the font for the entire page */
+    background-color: #e0f7fa; /* Light blue background color */
+    color: #00796b; /* Dark teal text color */
+    text-align: center; /* Center-aligns text */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Uses flexbox layout */
+    flex-direction: column; /* Stacks child elements vertically */
+    min-height: 100vh; /* Ensures the body takes at least full viewport height */
+}
+
+/* Main content area styling */
+main {
+    flex: 1; /* Allows main to expand to fill available space */
+    display: flex; /* Uses flexbox layout */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    padding: 20px; /* Adds padding around the content */
+}
+
+/* Container for layout control */
+.container-fluid {
+    display: flex; /* Uses flexbox layout */
+    justify-content: space-between; /* Spaces items evenly with space between them */
+    align-items: center; /* Centers items vertically */
+    width: 100%; /* Ensures container takes full width */
+    max-width: 1200px; /* Optional: Limits maximum width for readability */
+    position: relative; /* Sets positioning context */
+}
+
+/* Styling for activity and user stats tables */
+.activities-table, .user-stats-table {
+    background-color: #ffffff; /* White background for the tables */
+    color: #00796b; /* Dark teal text color */
+    border: 1px solid #00796b; /* Dark teal border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    padding: 15px; /* Adds padding inside the tables */
+    margin: 10px; /* Adds space around the tables */
+    width: 30%; /* Sets width to 30% of the container */
+    max-width: 400px; /* Optional: Limits maximum width for readability */
+}
+
+/* Specific styling for activities table */
+.activities-table {
+    flex: 1; /* Allows the table to expand */
+}
+
+/* Specific styling for user stats table */
+.user-stats-table {
+    flex: 1; /* Allows the table to expand */
+}
+
+/* Table styling */
+.table {
+    width: 100%; /* Ensures table takes full width of its container */
+    border-collapse: collapse; /* Merges table borders */
+}
+
+/* Table header and data cell styling */
+.table th, .table td {
+    padding: 10px; /* Adds padding inside table cells */
+    text-align: left; /* Aligns text to the left */
+    border-bottom: 1px solid #ddd; /* Light gray border between rows */
+}
+
+/* Table header styling */
+.table th {
+    background-color: #028090; /* Teal background color for header */
+    color: white; /* White text color for header */
+}
+
+/* Table data cell styling */
+.table td {
+    background-color: #f9f9f9; /* Light gray background color for data cells */
+}
+
+/* Tree container styling */
+.tree-container {
+    position: relative; /* Sets positioning context */
+    width: 300px; /* Fixed width for the tree container */
+    height: auto; /* Adjusts height automatically based on content */
+    display: flex; /* Uses flexbox layout */
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers items horizontally */
+    flex: 1; /* Allows container to expand */
+    margin: 0 auto; /* Centers the container horizontally */
+    padding-top: 120px; /* Adds space between header and tree */
+}
+
+/* Tree element styling */
+#tree {
+    position: relative; /* Sets positioning context */
+    display: flex; /* Uses flexbox layout */
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers items horizontally */
+    transition: all 0.5s ease-in-out; /* Smooth transition for changes */
+}
+
+/* Points display styling */
+.points-display {
+    background-color: #028090; /* Teal background color */
+    color: #ffffff; /* White text color */
+    font-size: 18px; /* Larger font size */
+    padding: 10px; /* Adds padding inside the display */
+    border-radius: 5px; /* Rounded corners */
+    position: absolute; /* Positions it absolutely within the tree */
+    top: 50%; /* Centers vertically within the tree */
+    left: 50%; /* Centers horizontally within the tree */
+    transform: translate(-50%, -50%); /* Centers the display relative to its own center */
+    font-weight: bold; /* Bold text */
+    z-index: 10; /* Ensures it appears on top */
+}
+
+/* Trunk styling */
+.trunk {
+    background-color: #795548; /* Brown background color */
+    width: 80px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+    transition: height 0.1s ease-in-out; /* Smooth transition for height changes */
+    position: relative; /* Sets positioning context */
+    z-index: 1; /* Ensures trunk appears below leaves */
+}
+
+/* Leaves styling */
+.leaves {
+    background: radial-gradient(circle at center, #4caf50 50%, #2c6b40 100%); /* Green gradient for leaves */
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+    position: absolute; /* Positions it absolutely within the tree */
+    top: -150px; /* Positions above the trunk */
+    left: 50%; /* Centers horizontally */
+    transform: translateX(-50%); /* Centers the leaves horizontally relative to its own center */
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out; /* Smooth transition for size changes */
+    z-index: 2; /* Ensures leaves appear on top of the trunk */
+}
+
+/* Styling for buttons */
+#growButton, #infoButton {
+    margin-top: 20px; /* Space above the button */
+    padding: 10px 20px; /* Adds padding inside the button */
+    font-size: 16px; /* Font size */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Specific styling for grow button */
+#growButton {
+    background-color: #00796b; /* Teal background color */
+    color: #ffffff; /* White text color */
+}
+
+/* Hover effect for grow button */
+#growButton:hover {
+    background-color: #004d40; /* Darker teal on hover */
+}
+
+/* Specific styling for info button */
+#infoButton {
+    background-color: #028090; /* Teal background color */
+    color: #ffffff; /* White text color */
+}
+
+/* Hover effect for info button */
+#infoButton:hover {
+    background-color: #014d6a; /* Darker teal on hover */
+}
+
+/* Modal dialog styling */
+.modal-dialog {
+    position: absolute; /* Positions modal in the center of the screen */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for exact center */
+    margin: 0; /* Removes default margin */
+}
+
+/* Modal content styling */
+.modal-content {
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Light shadow for depth */
+    width: 300px; /* Fixed width */
+    max-width: 100%; /* Ensures responsiveness */
+}
+
+/* Modal header styling */
+.modal-header {
+    background-color: #028090; /* Teal background color */
+    color: #ffffff; /* White text color */
+}
+
+/* Modal footer styling */
+.modal-footer {
+    background-color: #f1f1f1; /* Light gray background color */
+}
+
+/* Modal body styling */
+.modal-body {
+    background-color: #ffffff; /* White background color */
+    color: #00796b; /* Dark teal text color */
+}
+
+body {
     background-color: #F5F5F5; /* Light gray background for a clean look */
     color: #333; /* Dark gray text for readability */
     margin: 0;
