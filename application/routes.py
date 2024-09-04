@@ -36,16 +36,17 @@ def about_us():
 def login():
     if request.method == 'POST':
         username = request.form['username']
-        password = request.form['password'].encode('utf-8')
+        password = request.form['password']
 
         logged_in_user = get_user_byusername(username)
         print(logged_in_user)
         stored_hashed_password = logged_in_user[1]
         print(stored_hashed_password)
-        if bcrypt.checkpw(stored_hashed_password, password):
+        # if bcrypt.checkpw(stored_hashed_password, password):
+        if bcrypt.checkpw(password.encode("utf-8"), stored_hashed_password.encode('utf-8')):
             return render_template('HomePage.html', title="Home")
-        else:
-            print('no match')
+        # else:
+        #     print('no match')
 
         # for user in logged_in_user:
         #     stored_hashed_password = user['password']
