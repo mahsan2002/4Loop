@@ -52,7 +52,8 @@
         <!-- Container class -->
         <div class="container-fluid">
             <!-- SkySustain Logo -->
-            <a class="navbar-brand ms-4" href="">SkySustain</a>
+            <a href="/home"><img src="../static/logo.png" alt="" style="width: 150px;"></a>
+<!--            <a class="navbar-brand ms-4" href="">SkySustain</a>-->
 
             <!--Navigation button-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,11 +80,16 @@
                     <li class="nav-item">
                         <a href="/aboutus"><button type="button" class="btn btn-light ms-4">🧑 About Us</button></a>
                     </li>
-
                 </ul>
-                <span class="navbar-text">
-                    <button type="button" class="btn btn-light ms-4">👤 Isaiah Moses</button>
-                </span>
+
+                <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">(Username)</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/login">Login</a></li>
+                        <li><a class="dropdown-item" href="/register">Register</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </nav>
@@ -102,10 +108,10 @@
 
                 <div class="col">
                     <div class="row">
-                        <div class="col-md footer-text"><a href="#"> T&Cs</a></div>
-                        <div class="col-md footer-text"><a href="#"> Accessibility</a></div>
-                        <div class="col-md footer-text"><a href="#"> Modern slavery</a></div>
-                        <div class="col-md footer-text"><a href="#">Sky Group </a></div>
+                        <div class="col-md footer-text"><a href="https://www.sky.com/help/articles/skycom-terms-and-conditions"> T&Cs</a></div>
+                        <div class="col-md footer-text"><a href="https://www.skyaccessibility.sky/"> Accessibility</a></div>
+                        <div class="col-md footer-text"><a href="https://www.skygroup.sky/modern-slavery"> Modern slavery</a></div>
+                        <div class="col-md footer-text"><a href="https://www.skygroup.sky/">Sky Group </a></div>
                     </div>
                 </div>
 
