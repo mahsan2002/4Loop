@@ -1,14 +1,22 @@
 {% extends "layout.html" %}
 {% block body_content %}
-<section>
-   <form action="" method="POST">
-      <p><label for="username">Username: </label></p>
-      <p><input type="text" id="username" name="username"/></p>
-      <p><label for="password">Password: </label></p>
-       <p><input type="password" id="password" name="password"/></p>
-      <p><input type=submit value='Register'/></p>
-   </form>
-   <p>{{message}}</p>
-</section>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col card">
+      <form action="" method="POST" class="card-body">
+         <p class="text-center">Register to SkySustain</p>
+         <hr>
+         <p><label for="username">Username: </label></p>
+         <p><input type="text" id="username" name="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/></p>
+         <p><label for="password">Password: </label></p>
+          <p><input type="password" id="password" name="password" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/></p>
+         <p class="text-center"><input type=submit value='Register'/></p>
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+<p>{{message}}</p>
 {% endblock %}
 

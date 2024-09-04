@@ -12,7 +12,6 @@ import bcrypt
 @app.route('/home')
 # @app.route('/home')
 def home():
-
     return render_template('HomePage.html', title='Home')
 
 
@@ -35,12 +34,9 @@ def about_us():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-
-        username_strong = is_strong_username(password)
 
         logged_in_users = get_users()
 
@@ -85,7 +81,9 @@ def register():
         password_strong = is_strong_password(password)
         username_strong = is_strong_username(username)
 
-        if password_strong[0] == False and username_strong[0] == False:
+
+
+        if password_strong[0] == False or username_strong[0] == False:
             error = password_strong[1]
 
         else:
@@ -94,12 +92,11 @@ def register():
             salt = bcrypt.gensalt()
             # Hashing the password
             hashed_password = bcrypt.hashpw(bytes, salt)
-            # hashed_password = bcrypt.hashpw(password_strong, salt)
+
             shortened_hash = hashed_password[:32]
 
             add_user(username, shortened_hash)
 
-            print(shortened_hash)
-
+            return render_template('login.html', title='Login')
 
     return render_template('register.html', title='Register', message=error)

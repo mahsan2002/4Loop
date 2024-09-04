@@ -57,3 +57,5 @@ def add_user(username, password):
 
     conn.commit()
 
+    return val
+
