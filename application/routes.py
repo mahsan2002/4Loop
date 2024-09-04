@@ -42,22 +42,12 @@ def login():
         print(logged_in_user)
         stored_hashed_password = logged_in_user[1]
         print(stored_hashed_password)
-        # if bcrypt.checkpw(stored_hashed_password, password):
+
         if bcrypt.checkpw(password.encode("utf-8"), stored_hashed_password.encode('utf-8')):
 
-            return render_template('HomePage.html', title="Home")
-        # else:
-        #     print('no match')
+            session['username'] = username
 
-        # for user in logged_in_user:
-        #     stored_hashed_password = user['password']
-        #
-        #     if username == user['username'] and bcrypt.checkpw(stored_hashed_password, password):
-        #
-        #         return render_template('HomePage.html', title="Home")
-        #
-        #     else:
-        #         print('no match')
+            return render_template('HomePage.html', title="Home", username=username)
 
     return render_template('login.html', title="Login")
 
