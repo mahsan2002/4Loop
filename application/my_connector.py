@@ -46,6 +46,23 @@ def get_users():
         user_list.append({'username': user[0], 'password': user[1]})
     return user_list
 
+def get_user_byusername(username):
+    conn = get_db_connection()
+
+    # cursor() allows you to interact with the sql database.
+    cursor = conn.cursor()
+
+    # sql = "Select ID, username from db_users"
+    sql = "Select username, password from db_users where username = %s"
+    val = (username,)
+    cursor.execute(sql, val)
+
+    result_set = cursor.fetchone()
+    # user_list = []
+    # for user in result_set:
+    #     user_list.append({'username': user[0], 'password': user[1]})
+    return result_set
+
 
 def add_user(username, password):
     conn = get_db_connection()

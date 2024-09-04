@@ -3,7 +3,7 @@ import sys
 from flask import render_template, request, redirect, url_for, session
 
 from application import app
-from application.my_connector import get_users, add_user
+from application.my_connector import get_users, add_user, get_user_byusername
 from application.login import is_strong_password, is_strong_username
 import bcrypt
 
@@ -36,17 +36,26 @@ def about_us():
 def login():
     if request.method == 'POST':
         username = request.form['username']
-        password = request.form['password']
+        password = request.form['password'].encode('utf-8')
 
-        logged_in_users = get_users()
+        logged_in_user = get_user_byusername(username)
+        print(logged_in_user)
+        stored_hashed_password = logged_in_user[1]
+        print(stored_hashed_password)
+        if bcrypt.checkpw(stored_hashed_password, password):
+            return render_template('HomePage.html', title="Home")
+        else:
+            print('no match')
 
-        for user in logged_in_users:
-
-            if username == user['username'] and password == user['password']:
-                return render_template('HomePage.html', title="Home")
-
-            else:
-                print('no match')
+        # for user in logged_in_user:
+        #     stored_hashed_password = user['password']
+        #
+        #     if username == user['username'] and bcrypt.checkpw(stored_hashed_password, password):
+        #
+        #         return render_template('HomePage.html', title="Home")
+        #
+        #     else:
+        #         print('no match')
 
     return render_template('login.html', title="Login")
 
@@ -80,11 +89,11 @@ def register():
 
         password_strong = is_strong_password(password)
         username_strong = is_strong_username(username)
-
-
+        # print("Is the password strong", password_strong)
+        # print("Is the username strong", username_strong)
 
         if password_strong[0] == False or username_strong[0] == False:
-            error = password_strong[1]
+            error = password_strong[1] + username_strong[1]
 
         else:
             # converting password to array of bytes
@@ -93,9 +102,7 @@ def register():
             # Hashing the password
             hashed_password = bcrypt.hashpw(bytes, salt)
 
-            shortened_hash = hashed_password[:32]
-
-            add_user(username, shortened_hash)
+            add_user(username, hashed_password)
 
             return render_template('login.html', title='Login')
 
