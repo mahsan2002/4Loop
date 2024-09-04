@@ -44,6 +44,7 @@ def login():
         print(stored_hashed_password)
         # if bcrypt.checkpw(stored_hashed_password, password):
         if bcrypt.checkpw(password.encode("utf-8"), stored_hashed_password.encode('utf-8')):
+
             return render_template('HomePage.html', title="Home")
         # else:
         #     print('no match')
