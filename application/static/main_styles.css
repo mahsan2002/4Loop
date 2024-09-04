@@ -1,43 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700&display=swap');
+
 body {
-    background-color: #FFEEDB;
-    color: #4c5b61;
+    background-color: #F5F5F5; /* Light gray background for a clean look */
+    color: #333; /* Dark gray text for readability */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
 }
 
 #navbar {
-    background-color: #61C9A8;
+    background-color: #2A9D8F; /* Teal for a fresh, professional tone */
+    padding: 1rem; /* Even padding for a clean, spacious feel */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+    font-weight: 700; /* Bold logo text for clarity */
+    color: #FFF; /* White text for high contrast */
+    font-size: 1.5rem; /* Adequate size for visibility */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar-brand:hover {
+    color: #E0F2F1; /* Light teal on hover */
+}
+
+.navbar-toggler {
+    border: none; /* Remove default border */
+}
+
+.navbar-toggler-icon {
+    background-color: #FFF; /* White icon for contrast */
 }
 
 .nav-btn {
+    color: #FFF; /* White text for readability */
+    background-color: #2A9D8F; /* Matching teal for buttons */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    padding: 0.5rem 1rem;
     margin: 0 5px;
+    font-size: 0.9rem; /* Slightly smaller font size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.nav-btn:hover {
+    background-color: #1D8F74; /* Darker teal on hover */
+    transform: translateY(-3px) scale(1.05); /* Subtle lift and scale effect on hover */
 }
 
 #main-title {
-    background-color:peachpuff;
+    color: #003D34; /* Deep green for a professional and grounded look */
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 2.5rem; /* Larger font size for prominence */
+    font-weight: 700;
+    margin: 1.5rem auto;
+    width: 80%; /* Centralized and reduced width for focus */
+    border-bottom: 3px solid #003D34; /* Subtle underline for emphasis */
+    background-color: #E0F2F1; /* Light teal background for contrast */
+    border-radius: 8px; /* Rounded corners for a softer appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+#main-title:hover {
+    background-color: #C8E6C9; /* Slightly different light green on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .sub-title {
-    background-color:peachpuff;
-
+    color: #8C9D6C; /* Muted olive green for a gentle contrast */
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.75rem; /* Slightly larger font size */
+    font-weight: 400;
+    margin: 1rem auto;
+    width: 80%; /* Consistent width with main title */
+    background-color: #F1F8E9; /* Light green background for subtle contrast */
+    border-radius: 6px; /* Consistent rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
+.sub-title:hover {
+    background-color: #E0F2F1; /* Light teal on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
 
 .card {
-    margin: 2rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #FFF; /* White background for content cards */
+    border-left: 5px solid #2A9D8F; /* Teal border for a fresh, nature-inspired touch */
+    border-radius: 8px; /* Rounded corners for a clean look */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 800px; /* Max width for readability */
+    transition: box-shadow 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
-
+.card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
 
 #footer {
-    background-color: #08605f;
-    color: white;
+    background-color: #2A9D8F; /* Matching teal for footer consistency */
+    color: #FFF; /* White text for contrast */
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
-.col-md footer-text a {
-  color: blue;
-  text-decoration: none; /* no underline */
+.footer-text {
+    color: #FFF; /* White text for readability */
+}
+
+.footer-text a {
+    color: #E0F2F1; /* Light teal links for a professional look */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.footer-text a:hover {
+    color: #FFF; /* White on hover for clarity */
+    text-decoration: underline; /* Underline on hover for clarity */
 }
