@@ -65,7 +65,6 @@ def login():
 
             session['username'] = username
 
-
             return render_template('HomePage.html', title="Home", username=username)
 
     return render_template('login.html', title="Login", username=name)
