@@ -112,7 +112,7 @@ def register():
         # print("Is the username strong", username_strong)
 
         if password_strong[0] == False or username_strong[0] == False:
-            error = password_strong[1] + username_strong[1]
+            error = password_strong[1]
 
         else:
             # converting password to array of bytes
