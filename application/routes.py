@@ -44,8 +44,9 @@ def about_us():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    name = get_username()
     if request.method == 'POST':
-        name = get_username()
+
 
         username = request.form['username']
         password = request.form['password']
