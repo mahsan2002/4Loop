@@ -1,20 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700&display=swap');
 
-body {
-    font-family: Arial, sans-serif; /* Sets the font for the entire page */
-    background-color: #e0f7fa; /* Light blue background color */
-    color: #00796b; /* Dark teal text color */
-    text-align: center; /* Center-aligns text */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
-    display: flex; /* Uses flexbox layout */
-    flex-direction: column; /* Stacks child elements vertically */
-    min-height: 100vh; /* Ensures the body takes at least full viewport height */
-}
 
 /* General body styling */
 body {
-    font-family: Arial, sans-serif; /* Sets the font for the entire page */
+    font-family: "Montserrat", sans-serif; /* Sets the font for the entire page */
     background-color: #e0f7fa; /* Light blue background color */
     color: #00796b; /* Dark teal text color */
     text-align: center; /* Center-aligns text */
