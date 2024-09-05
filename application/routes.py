@@ -7,12 +7,16 @@ from application.my_connector import get_users, add_user, get_user_byusername
 from application.login import is_strong_password, is_strong_username
 import bcrypt
 
+
 def get_username():
-    user = session.pop('username',None)
+    user = session.get('username',None)
     if user != None:
+        print(user)
+
         return session['username']
     else:
         return 'Guest'
+
 
 @app.route('/')
 @app.route('/home')
@@ -45,7 +49,9 @@ def about_us():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     name = get_username()
+    print('In login', name)
     if request.method == 'POST':
+
 
         username = request.form['username']
         password = request.form['password']
@@ -59,7 +65,8 @@ def login():
 
             session['username'] = username
 
-            return render_template('HomePage.html', title="Home", username=name)
+
+            return render_template('HomePage.html', title="Home", username=username)
 
     return render_template('login.html', title="Login", username=name)
 
