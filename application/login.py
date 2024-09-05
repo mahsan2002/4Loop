@@ -39,9 +39,9 @@ def is_strong_password(password):
 def is_strong_username(username):
     """Check if the password is strong."""
 
-    # At least one digit
-    if not re.search(r"\d", username):
-        return False, "Username must contain at least one digit."
+    # At least one lowercase letter
+    if not re.search(r"[a-z]", username):
+        return False, "Password must contain at least one lowercase letter."
 
     return True, "Username is strong."
 

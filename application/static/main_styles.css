@@ -1,21 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700&display=swap');
 
-body {
-    font-family: Arial, sans-serif; /* Sets the font for the entire page */
-    background-color: #e0f7fa; /* Light blue background color */
-    color: #00796b; /* Dark teal text color */
-    text-align: center; /* Center-aligns text */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
-    display: flex; /* Uses flexbox layout */
-    flex-direction: column; /* Stacks child elements vertically */
-    min-height: 100vh; /* Ensures the body takes at least full viewport height */
-}
 
 /* General body styling */
 body {
-    font-family: Arial, sans-serif; /* Sets the font for the entire page */
-    background-color: #e0f7fa; /* Light blue background color */
+    font-family: "Montserrat", sans-serif; /* Sets the font for the entire page */
+    background-color: #F5F5F5; /* Light blue background color */
     color: #00796b; /* Dark teal text color */
     text-align: center; /* Center-aligns text */
     margin: 0; /* Removes default margin */
@@ -348,4 +337,39 @@ body {
 .footer-text a:hover {
     color: #FFF; /* White on hover for clarity */
     text-decoration: underline; /* Underline on hover for clarity */
+}
+
+.full-width-image {
+    position: relative;
+    width: 100%; /* Make sure it spans the full width of the page */
+    height: auto; /* Keep the height proportional to the image */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.full-width-image img {
+    width: 100%; /* Ensures the image spans the full width */
+    height: auto; /* Ensures the height scales proportionally */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Style for the fixed-image container */
+.fixed-image {
+    position: relative;
+    display: inline-block;
+    max-width: 100%; /* Ensures responsiveness */
+}
+
+/* Style for the overlay text to position it in the top-right */
+.overlay-text {
+    position: absolute;
+    top: 10px;  /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    color: white; /* White text */
+    font-size: 28px; /* Professional size */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Optional: Capitalizes the text for emphasis */
+    font-family: 'Arial', sans-serif; /* Professional font */
+    letter-spacing: 1px; /* Adds slight spacing between letters for readability */
 }
