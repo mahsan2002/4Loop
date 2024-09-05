@@ -1,51 +1,67 @@
-body {
-    background-color: #FFEEDB;
+/* General card styling */
+.card {
+    width: 18rem;
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 450px; /* Ensure all cards have the same height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/* Circular image styling */
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Ensure image is circular */
+    margin-top: 20px;
+    border: 3px solid #61C9A8; /* Optional: Add border around image */
+}
+
+/* Card body alignment */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Name and role text styling */
+.card-title {
+    font-size: 1.25rem;
+    margin-top: 15px;
+    font-weight: bold;
     color: #4c5b61;
 }
 
-#navbar {
+/* Text styling */
+.card-text {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #4c5b61;
+}
+
+/* Button styling */
+.card a {
+    margin-top: auto; /* Push the button to the bottom */
+    color: #fff !important;
     background-color: #61C9A8;
-}
-
-#main-title {
-    background-color: peachpuff;
-    padding: 2rem;
-}
-
-.card {
-    margin: 20px;
-}
-
-.nav-btn {
-    margin: 0 5px;
-}
-
-.sub-title {
-    padding: 1.5rem 2rem;
-    font-size: 1.5rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
     font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    
+/* Button hover effect */
+.card a:hover {
+    background-color: #4e9b81;
 }
-
-#company-values {
-
-    background-color: peachpuff;
-
-}
-
-#footer {
-    background-color: #08605f;
-    color: white;
-}
-
-#twitter-logo {
-    width: 67px;
-}
-
-
-
