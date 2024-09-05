@@ -66,6 +66,11 @@ def leaderboard():
     return render_template('Leaderboard.html', title='Leaderboard', username=session['username'])
 
 
+# @app.route('/tracker')
+# def tracker():
+#     # code goes here
+#     return render_template('tracker.html', title='Tracker')
+
 @app.route('/tracker')
 def tracker():
     # code goes here
