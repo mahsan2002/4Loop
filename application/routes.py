@@ -7,12 +7,20 @@ from application.my_connector import get_users, add_user, get_user_byusername
 from application.login import is_strong_password, is_strong_username
 import bcrypt
 
+def get_username():
+    user = session.pop('username',None)
+    if user != None:
+        return session['username']
+    else:
+        return 'Guest'
 
 @app.route('/')
 @app.route('/home')
 # @app.route('/home')
 def home():
-    return render_template('HomePage.html', title='Home')
+    name = get_username()
+    print(name)
+    return render_template('HomePage.html', title='Home', username=name)
 
 
 @app.route('/welcome/<name>')
@@ -29,7 +37,7 @@ def contact_us():
 @app.route('/aboutus')
 def about_us():
     # code goes here
-    return render_template('AboutUs.html', title='About us')
+    return render_template('AboutUs.html', title='About us', username=session['username'])
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -55,13 +63,13 @@ def login():
 @app.route('/leaderboard')
 def leaderboard():
     # code goes here
-    return render_template('Leaderboard.html', title='Leaderboard')
+    return render_template('Leaderboard.html', title='Leaderboard', username=session['username'])
 
 
 @app.route('/tracker')
 def tracker():
     # code goes here
-    return render_template('tracker.html', title='Tracker')
+    return render_template('tracker.html', title='Tracker', username=session['username'])
 
 
 @app.route('/users')
@@ -96,6 +104,12 @@ def register():
 
             add_user(username, hashed_password)
 
-            return render_template('login.html', title='Login')
+            return render_template('login.html', title='Login', username=session['username'])
 
-    return render_template('register.html', title='Register', message=error)
+    return render_template('register.html', title='Register', message=error, username="Guest")
+
+@app.route('/logout', methods=['GET'])
+def logout():
+    session.pop('username',None)
+
+    return redirect(url_for("home"))
