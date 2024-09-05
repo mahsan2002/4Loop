@@ -354,13 +354,22 @@ body {
     object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
+/* Style for the fixed-image container */
+.fixed-image {
+    position: relative;
+    display: inline-block;
+    max-width: 100%; /* Ensures responsiveness */
+}
+
+/* Style for the overlay text to position it in the top-right */
 .overlay-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    top: 10px;  /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    color: white; /* White text */
+    font-size: 28px; /* Professional size */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Optional: Capitalizes the text for emphasis */
+    font-family: 'Arial', sans-serif; /* Professional font */
+    letter-spacing: 1px; /* Adds slight spacing between letters for readability */
 }
