@@ -339,3 +339,28 @@ body {
     text-decoration: underline; /* Underline on hover for clarity */
 }
 
+.full-width-image {
+    position: relative;
+    width: 100%; /* Make sure it spans the full width of the page */
+    height: auto; /* Keep the height proportional to the image */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.full-width-image img {
+    width: 100%; /* Ensures the image spans the full width */
+    height: auto; /* Ensures the height scales proportionally */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
