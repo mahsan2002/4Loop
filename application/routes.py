@@ -31,18 +31,22 @@ def welcome(name):
 @app.route('/contact')
 def contact_us():
     # code goes here
-    return render_template('contact.html', location='Osterley', title='Contact Us')
+    name = get_username()
+    return render_template('contact.html', location='Osterley', title='Contact Us', username=name)
 
 
 @app.route('/aboutus')
 def about_us():
     # code goes here
-    return render_template('AboutUs.html', title='About us', username=session['username'])
+    name = get_username()
+    return render_template('AboutUs.html', title='About us', username=name)
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
+        name = get_username()
+
         username = request.form['username']
         password = request.form['password']
 
@@ -55,15 +59,16 @@ def login():
 
             session['username'] = username
 
-            return render_template('HomePage.html', title="Home", username=username)
+            return render_template('HomePage.html', title="Home", username=name)
 
-    return render_template('login.html', title="Login")
+    return render_template('login.html', title="Login", username=name)
 
 
 @app.route('/leaderboard')
 def leaderboard():
     # code goes here
-    return render_template('Leaderboard.html', title='Leaderboard', username=session['username'])
+    name = get_username()
+    return render_template('Leaderboard.html', title='Leaderboard', username=name)
 
 
 # @app.route('/tracker')
@@ -74,7 +79,8 @@ def leaderboard():
 @app.route('/tracker')
 def tracker():
     # code goes here
-    return render_template('tracker.html', title='Tracker', username=session['username'])
+    name = get_username()
+    return render_template('tracker.html', title='Tracker', username=name)
 
 
 @app.route('/users')
@@ -87,6 +93,7 @@ def all_users_from_db():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     error = ""
+    name = get_username()
 
     if request.method == 'POST':
         username = request.form['username']
@@ -109,7 +116,7 @@ def register():
 
             add_user(username, hashed_password)
 
-            return render_template('login.html', title='Login', username=session['username'])
+            return render_template('login.html', title='Login', username=name)
 
     return render_template('register.html', title='Register', message=error, username="Guest")
 
