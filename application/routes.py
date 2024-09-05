@@ -47,7 +47,6 @@ def login():
     name = get_username()
     if request.method == 'POST':
 
-
         username = request.form['username']
         password = request.form['password']
 
