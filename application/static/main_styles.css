@@ -358,18 +358,42 @@ body {
 .fixed-image {
     position: relative;
     display: inline-block;
+    width: 100%; /* Ensure it spans the full width */
     max-width: 100%; /* Ensures responsiveness */
+    height: auto;
 }
 
-/* Style for the overlay text to position it in the top-right */
+/* Style for the image */
+.fixed-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the area */
+}
+
+/* Overlay text for the 'Alongside our Sky zero...' */
+.overlay-content {
+    position: absolute;
+    top: 35%;  /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center text within the image */
+    width: 90%; /* Set a width for readability */
+    text-align: center; /* Center the text */
+    color: white; /* White text for contrast */
+    font-size: 40px; /* Adjust font size */
+    font-weight: 900; /* Extra bold */
+    z-index: 2; /* Ensure it stays above the image */
+}
+
+/* Overlay text for 'Sustainable Future' */
 .overlay-text {
     position: absolute;
     top: 10px;  /* Distance from the top */
     right: 10px; /* Distance from the right */
     color: white; /* White text */
-    font-size: 28px; /* Professional size */
+    font-size: 45px; /* Professional size */
     font-weight: bold; /* Make the text bold */
     text-transform: uppercase; /* Optional: Capitalizes the text for emphasis */
     font-family: 'Arial', sans-serif; /* Professional font */
     letter-spacing: 1px; /* Adds slight spacing between letters for readability */
+    z-index: 3; /* Ensure it stays above everything else */
 }
