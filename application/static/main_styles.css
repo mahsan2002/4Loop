@@ -390,8 +390,8 @@ body {
     top: 10px;  /* Distance from the top */
     right: 10px; /* Distance from the right */
     color: white; /* White text */
-    font-size: 45px; /* Professional size */
-    font-weight: bold; /* Make the text bold */
+    font-size: 38px; /* Professional size */
+    font-weight: 600; /* Make the text bold */
     text-transform: uppercase; /* Optional: Capitalizes the text for emphasis */
     font-family: 'Arial', sans-serif; /* Professional font */
     letter-spacing: 1px; /* Adds slight spacing between letters for readability */
